@@ -1,0 +1,17 @@
+# For "core diversity" pipeline:
+beta_diversity:metrics      bray_curtis,unweighted_unifrac,weighted_unifrac
+alpha_diversity:metrics     chao1,observed_otus,shannon,PD_whole_tree
+
+pick_otus:similarity                0.97
+pick_otus:threads                   72
+
+align_seqs:alignment_method         pynast
+align_seqs:template_fp              /gpfs0/biores/users/gilloro/Biyi/SILVA_132_QIIME_release/core_alignment/80_core_alignment.fna
+
+assign_taxonomy:confidence          0.5
+assign_taxonomy:assignment_method   rdp
+assign_taxonomy:rdp_max_memory      50000
+assign_taxonomy:id_to_taxonomy_fp   /gpfs0/biores/users/gilloro/Biyi/SILVA_132_QIIME_release/taxonomy/16S_only/97/consensus_taxonomy_7_levels.txt
+assign_taxonomy:reference_seqs_fp       /gpfs0/biores/users/gilloro/Biyi/SILVA_132_QIIME_release/rep_set/rep_set_16S_only/97/silva_132_97_16S.fna
+
+make_otu_table:mapping_fp       /gpfs0/biores/users/gilloro/Biyi/hinuman_analysis/00.mapping/mapping_file_corrected.txt
